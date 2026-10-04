@@ -187,7 +187,7 @@ def build():
     body=f'<main id="main" class="wrap not-found"><p class="eyebrow">404 / A little detour</p><h1>走岔了一小步。<br>A little detour.</h1><p>这个页面暂时找不到。回到首页，或让我们帮你找到答案。<br>This page could not be found. Try the home page or support.</p><div class="not-found-links">{btn("回到首页 / Home",BASE+"/")}{btn("技术支持 / Support",BASE+"/support/","outline")}</div></main>'
     # Absolute site URLs keep assets and navigation valid at arbitrary missing paths.
     error=document("zh","home",body,"页面未找到 / Page not found — Lighter","Return to Lighter or contact support.",current="",index=False)
-    error=error.replace('href="./"',f'href="{BASE}/"')
+    error=error.replace('href="./',f'href="{BASE}/')
     for prefix in ['href="assets/','src="assets/']:
         error=error.replace(prefix,prefix.split('assets/')[0]+BASE+'/assets/')
     for target in ["support/","privacy/","en/"]:
