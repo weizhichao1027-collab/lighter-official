@@ -1,0 +1,19 @@
+name: Website or app feedback / 技术问题
+description: Report a technical issue without sharing health data / 请勿提交个人健康信息
+title: "[Support] "
+body:
+  - type: markdown
+    attributes:
+      value: "This is public. Do not include health records, screening answers, exports, email addresses, or personal screenshots. For private help, email weizhichao1027@gmail.com. 此处公开可见，请勿上传健康记录、筛查答案、导出文件或个人资料；私密问题请发送邮件。"
+  - type: textarea
+    id: issue
+    attributes:
+      label: What happened? / 遇到了什么问题？
+      description: Describe the steps, expected result and actual result using example data.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: App / browser / iOS version / 版本
+      placeholder: "Lighter 0.1.0 · iOS 18 / Safari"
