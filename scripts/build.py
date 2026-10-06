@@ -50,7 +50,7 @@ def rel(current, target):
 
 def asset(current, name):
     url = rel(current, "assets/" + name)
-    if name.endswith((".css", ".js")):
+    if name.endswith((".css", ".js")) or name in {"mark.svg", "touch-icon.png", "favicon-32.png", "social-card.jpg"}:
         url += "?v=" + hashlib.sha256((ROOT / "assets" / name).read_bytes()).hexdigest()[:10]
     return url
 
@@ -95,8 +95,8 @@ def document(lang, page, body, title, description, current=None, index=True):
 <title>{e(title)}</title><meta name="description" content="{e(description)}"><meta name="theme-color" content="#fbfaf7"><meta name="color-scheme" content="light">
 <meta name="referrer" content="strict-origin-when-cross-origin"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="robots" content="{'index,follow' if index else 'noindex,follow'}"><link rel="canonical" href="{canonical}">{alternates}
-<meta property="og:type" content="website"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(description)}"><meta property="og:url" content="{canonical}"><meta property="og:image" content="{BASE}/assets/social-card.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="{t(lang,"zh_CN","en_US")}"><meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="{asset(current,"mark.svg")}" type="image/svg+xml"><link rel="apple-touch-icon" href="{asset(current,"touch-icon.png")}"><link rel="stylesheet" href="{asset(current,"style.css")}"><script defer src="{asset(current,"site.js")}"></script>
+<meta property="og:type" content="website"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(description)}"><meta property="og:url" content="{canonical}"><meta property="og:image" content="{BASE}/{asset("", "social-card.jpg")}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="{t(lang,"zh_CN","en_US")}"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{asset(current,"favicon-32.png")}" type="image/png" sizes="32x32"><link rel="icon" href="{asset(current,"mark.svg")}" type="image/svg+xml"><link rel="apple-touch-icon" href="{asset(current,"touch-icon.png")}"><link rel="stylesheet" href="{asset(current,"style.css")}"><script defer src="{asset(current,"site.js")}"></script>
 </head><body>{header(current,lang,page)}{body}{footer(current,lang)}</body></html>'''
 
 def home(lang):

@@ -1,0 +1,12 @@
+{
+  "confirmed_design": "26-双L精修",
+  "source_sha256": "cacd6980290f19d716044391a9876991a445b0cfa9834b3b3a93ad31a009de1c",
+  "direct_exports": {
+    "app-icon.png": "8b475647d1ff3f5e8bb7ea6c000c1459ac40344b665dbf0a21e95d1ca9f2f6b2",
+    "touch-icon.png": "61246b0f10b739ead91680dc326f7dc1ef31e68a39b8bf93739b0c303c977af3",
+    "favicon-32.png": "4556c86a95d4bbf293b521148c73306786862fc163bf7df394d6eab377ff07d3"
+  },
+  "mark_svg": "embeds exact app-icon.png bytes; rounded display mask only",
+  "social_card": "built-in image_gen edit from original sharing card with approved icon as reference; exported 1200x630 JPEG",
+  "synchronization_date": "2026-10-05"
+}

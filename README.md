@@ -32,6 +32,8 @@ python3 -m http.server 4173 --directory site
 - `assets/*.webp`：当前 App 真实开发截图与项目素材，截图只使用测试 / 示例资料。
 - `scripts/check.py`：检查内部链接、锚点、资源、语言、页面元数据与基本隐私约束。
 
+2026-10-05 图标已统一为用户选定的 26「双 L 精修」。导航与页脚的 `mark.svg` 嵌入由正式 AppIcon 导出的 `app-icon.png`，浏览器 PNG 图标与 Apple touch icon 也从同一正式图导出；分享卡左上标志已同步。`assets/icon-manifest.json` 记录选定源图与导出校验值。相关资源 URL 带内容版本参数，防止发布后继续显示旧缓存。2026-10-06 已推送 main，由 Pages 工作流构建发布。
+
 正式上架后填写 `app_store_url`，并同步更新首页发布说明、支持 FAQ 和政策中的版本范围。所有公开措辞应与最终 App 的实际处理一致。未来启用账号、云端 AI、HealthKit、支付或分析功能时，先更新隐私说明，不能仅添加下载按钮。
 
 ## 隐私文案的实现依据
